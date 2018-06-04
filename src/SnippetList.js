@@ -2,21 +2,21 @@ import React, { Component } from "react";
 
 
 
+
+
+
+
 class SnippetList extends Component {
 
-
-    createSnippets(snippet){
-        return <li key={snippet.key}>{snippet.label}</li>
-    }
-
     render() {
-        const snippetEntries = this.props.entries;
-        const snippetsBag = snippetEntries.map(this.createSnippets);
+
+        const snippetEntries = this.props.entries.map(function(snippet, i){
+        return <li key={snippet.key}>{snippet.label}</li>;
+        }) 
 
         return (
             <ul className="snippet-list">
-                {snippetsBag}
-
+                { snippetEntries }
             </ul>
         );
     }

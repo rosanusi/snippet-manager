@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SnippetList from "./SnippetList"
+import AddNewSnippet from "./AddNewSnippet"
 import "./snippetManager.css"
 
 const savedSnippets = localStorage.getItem("savedSnippets");
@@ -55,14 +56,10 @@ class SnippetManager extends Component {
 
     render() {
      return (
-         <div className="snippet-manager">
-            <form className="add-snippet-form" onSubmit={this.addSnippet}>
-                <input type="text" ref={(a) => this._inputLabel = a} placeholder="What snippet is this?"/>
-                <textarea name="snippet-code" ref={(a) => this._inputCode = a} placeholder="Add your code here"></textarea>
-                <button className="submit-snippet-btn">Add New Snippet</button>
-            </form>
+         <div className="snippet-manager">   
             <div className="list-pane">
                 <SnippetList entries={this.state.snippets}/>            
+                <AddNewSnippet/>                         
             </div>
          </div>
         );   
