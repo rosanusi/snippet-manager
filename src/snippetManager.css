@@ -9,6 +9,7 @@
   position: relative;
   height: 50vh;
   width: 100%;
+  overflow: hidden;
   max-width: 860px;
   background-color: #fff;
   border-radius: 12px;
@@ -17,11 +18,24 @@
 .add-snippet-form {
   display: none;
   position: absolute;
-  right: 0;
+  left: 0;
   width: 40%;
-  background: #efefef; }
+  background: #5a6772;
+  max-width: 400px;
+  width: 100%;
+  bottom: 0;
+  padding: 16px; }
   .add-snippet-form.show {
     display: block; }
+  .add-snippet-form input {
+    border: none;
+    width: 100%;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    background: #fff; }
+    .add-snippet-form input:hover, .add-snippet-form input:focus {
+      outline: none; }
 
 .list-pane {
   width: 30%;

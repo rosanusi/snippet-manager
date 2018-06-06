@@ -57,6 +57,7 @@ class SnippetManager extends Component {
         console.log(this.inputForm);
 
         this.inputForm.classList.toggle("show");
+        this.inputLabel.focus();
     }
 
 
