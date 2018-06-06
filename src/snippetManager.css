@@ -15,13 +15,15 @@
   box-shadow: 0 8px 32px 0 rgba(155, 162, 171, 0.5); }
 
 .add-snippet-form {
+  display: none;
   position: absolute;
   right: 0;
   width: 40%;
   background: #efefef; }
+  .add-snippet-form.show {
+    display: block; }
 
 .list-pane {
-  padding-top: 24px;
   width: 30%;
   height: 100%;
   position: relative;
@@ -35,5 +37,21 @@
   cursor: pointer; }
   .snippet-list li:hover {
     background-color: #fafafa; }
+
+.snippet-controls {
+  padding: 4px 16px;
+  text-align: right;
+  border-bottom: 1px solid #efefef; }
+  .snippet-controls .icon {
+    padding: 0;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer; }
+  .snippet-controls .addnew-icon {
+    color: black; }
+    .snippet-controls .addnew-icon:hover, .snippet-controls .addnew-icon:active, .snippet-controls .addnew-icon:focus {
+      color: #999999;
+      outline: none; }
 
 /*# sourceMappingURL=snippetManager.css.map */

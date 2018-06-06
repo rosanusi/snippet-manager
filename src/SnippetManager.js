@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SnippetList from "./SnippetList"
-import AddNewSnippet from "./AddNewSnippet"
+import SnippetControls from "./SnippetControls"
+import SnippetForm from "./SnippetForm"
 import "./snippetManager.css"
 
 const savedSnippets = localStorage.getItem("savedSnippets");
@@ -11,9 +12,8 @@ class SnippetManager extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { snippets: undefined };
-
         this.addSnippet = this.addSnippet.bind(this);
+        this.showSnippetForm = this.showSnippetForm.bind(this);
 
     }
 
@@ -28,15 +28,16 @@ class SnippetManager extends Component {
 
 
     addSnippet(e) {
+
+        e.preventDefault();        
         
-        if (this._inputLabel.value !== "" && this._inputCode.value !== "")  {
+        if (this.inputLabel.value !== "")  {
             const newSnippet = {
-                label: this._inputLabel.value,
-                code: this._inputCode.value,
+                label: this.inputLabel.value,
                 key: Date.now()
             };
 
-            snippets.push(newSnippet);
+            snippets.unshift(newSnippet);
             localStorage.setItem("savedSnippets", JSON.stringify(snippets));                
 
             this.setState({ snippets });
@@ -45,21 +46,35 @@ class SnippetManager extends Component {
             console.log("To-Do: Display error message, it's not working");
         }
 
-        this._inputLabel.value = "";
-        this._inputCode.value = "";
+        this.inputLabel.value = "";
 
-        console.log(this.state.snippets);
-
-        e.preventDefault();
-
+        this.inputForm.classList.remove("show");
     }
 
+
+    showSnippetForm(e) {
+        console.log("Whatsup! you good?");
+        console.log(this.inputForm);
+
+        this.inputForm.classList.toggle("show");
+    }
+
+
+
     render() {
+        
      return (
          <div className="snippet-manager">   
             <div className="list-pane">
-                <SnippetList entries={this.state.snippets}/>            
-                <AddNewSnippet/>                         
+                <SnippetControls
+                showSnippetForm={this.showSnippetForm}
+                />
+                <SnippetForm 
+                    addSnippet={this.addSnippet}
+                    inputForm={form => this.inputForm = form}
+                    inputLabel={input => this.inputLabel = input}
+                />
+                <SnippetList entries={this.state.snippets}/>       
             </div>
          </div>
         );   

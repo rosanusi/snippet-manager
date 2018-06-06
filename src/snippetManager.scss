@@ -19,15 +19,19 @@
 
 
 .add-snippet-form {
+    display: none;
     position:absolute;
     right: 0;
     width: 40%;
     background: #efefef;
+
+    &.show {
+        display: block;
+    }
 }
 
 
 .list-pane {
-    padding-top: 24px;
     width: 30%;
     height: 100%;
     position: relative;
@@ -49,5 +53,28 @@
             background-color: hsl(0, 0, 98);
         }
 
+    }
+}
+
+.snippet-controls {
+    padding: 4px 16px;
+    text-align: right;
+    border-bottom: 1px solid #efefef;
+
+    .icon {
+        padding: 0;
+        border: none;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .addnew-icon {
+        color: hsl(0, 0%, 0%);
+
+        &:hover, &:active, &:focus {
+            color: hsl(0, 0%, 60%);
+            outline: none;
+        }
     }
 }

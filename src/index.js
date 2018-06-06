@@ -5,10 +5,13 @@ import SnippetManager from "./SnippetManager";
 import "./reset.css";
 import "./index.css";
 
+
+
 const wrap = document.querySelector(".wrap");
+
+
 
 ReactDOM.render (
     <SnippetManager/>,
-    // <JsonApi/>,
     wrap
 );

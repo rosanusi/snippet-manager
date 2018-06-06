@@ -1,11 +1,6 @@
 import React, { Component } from "react";
 
 
-
-
-
-
-
 class SnippetList extends Component {
 
     render() {
