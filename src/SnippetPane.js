@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import SnippetPane from "./SnippetPane";
 
-class SnippetList extends Component {
+
+class SnippetPane extends Component {
 
     render() {
 
@@ -21,15 +21,8 @@ class SnippetList extends Component {
                 { snippetEntries }
             </ul>
         );
-
-
-        const snippetPane = this.props.entries.map(function(snippet, i){
-            return  <div key={snippet.key}>  
-                        {snippet.label}      
-                    </div>;
-            }) 
     }
 }
 
 
-export default SnippetList
+export default SnippetPane

@@ -12,6 +12,7 @@ class SnippetForm extends Component {
         return (
             <form className="add-snippet-form" ref={this.props.inputForm} onSubmit={addSnippet}>
                 <input type="text" ref={this.props.inputLabel} placeholder="What snippet is this?"/>
+                <span className="enter-icon">⨼</span>
             </form>
         );
     }

@@ -14,6 +14,7 @@ class SnippetManager extends Component {
 
         this.addSnippet = this.addSnippet.bind(this);
         this.showSnippetForm = this.showSnippetForm.bind(this);
+        this.showCode = this.showCode.bind(this);
 
     }
 
@@ -60,6 +61,11 @@ class SnippetManager extends Component {
         this.inputLabel.focus();
     }
 
+    showCode(e) {
+        console.log("Ok! Ok! Time to show something");
+        console.log(this.state.snippets.snippet);
+    }
+
 
 
     render() {
@@ -75,7 +81,10 @@ class SnippetManager extends Component {
                     inputForm={form => this.inputForm = form}
                     inputLabel={input => this.inputLabel = input}
                 />
-                <SnippetList entries={this.state.snippets}/>       
+                <SnippetList 
+                showCode={this.showCode}
+                entries={this.state.snippets}
+                />       
             </div>
          </div>
         );   

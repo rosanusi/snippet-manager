@@ -3,16 +3,6 @@ import React, { Component } from "react";
 
 class SnippetControls extends Component {
 
-    constructor(props) {
-        super(props);
-
-
-        
-
-    }
-
-
-
     render() {
 
         const { showSnippetForm } = this.props;

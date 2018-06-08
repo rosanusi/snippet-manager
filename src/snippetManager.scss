@@ -9,7 +9,7 @@
 
 .snippet-manager {
     position: relative;
-    height: 50vh;
+    height: 700px;
     width: 100%;
     overflow: hidden;
     max-width: 860px;
@@ -24,12 +24,13 @@
     position:absolute;
     left: 0;
     width: 40%;
-    background: hsla(208, 12%, 40%, 1.00);
-
+    background: rgb(243, 243, 243);
+    border-top: 1px solid #efefef;
     max-width: 400px;
     width: 100%;
     bottom: 0;
-    padding: 16px;
+    padding: 8px 16px;
+
 
 
     &.show {
@@ -39,14 +40,21 @@
     input {
         border: none;
         width: 100%;
-        padding: 4px 8px;
         font-size: 12px;
-        border-radius: 4px;
-        background: #fff;        
+        border-radius: 4px;  
+        background-color: inherit;    
 
         &:hover, &:focus {
             outline: none;
         }
+    }
+
+    .enter-icon {
+        position: absolute;
+        right: 12px;
+        line-height: 1;
+        font-size: 16px;
+        display: inline-block;
     }
 
 
