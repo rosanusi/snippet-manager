@@ -16,6 +16,7 @@ class SnippetManager extends Component {
         this.addSnippet = this.addSnippet.bind(this);
         this.showSnippetForm = this.showSnippetForm.bind(this);
         this.showCode = this.showCode.bind(this);
+        this.updateCode = this.updateCode.bind(this);
 
     }
 
@@ -36,6 +37,7 @@ class SnippetManager extends Component {
         if (this.inputLabel.value !== "")  {
             const newSnippet = {
                 label: this.inputLabel.value,
+                code: "",
                 key: Date.now()
             };
 
@@ -64,8 +66,35 @@ class SnippetManager extends Component {
 
 
     showCode = (e, snippet) => {
-        // access to e.target here
+
         console.log(snippet);
+        console.log(snippet.key);
+        console.log(snippet.label);
+
+        this.setState({ 
+            label: snippet.label, 
+            key: snippet.key
+        });
+
+    }
+
+
+    updateCode(e) {
+
+        e.preventDefault();        
+        
+        console.log("update the code in the textarea");
+
+        console.log(this.inputCode);
+        console.log(snippet);
+        // console.log(snippet.key);
+        // console.log(snippet.label);
+
+        // this.setState({ 
+        //     label: snippet.label, 
+        //     key: snippet.key,
+        //     code: snippet.code
+        // });
 
     }
 
@@ -87,13 +116,17 @@ class SnippetManager extends Component {
                     inputLabel={input => this.inputLabel = input}
                 />
                 <SnippetList 
-                showCode={this.showCode}
                 entries={this.state.snippets}
+                showCode={this.showCode}
                 />
             </div>
             <SnippetPane 
                 entries={this.state.snippets}
-                
+                label={this.state.label}
+                id={this.state.key}
+                code={this.state.code}
+                inputCode={form => this.inputCode = form}
+                updateCode={this.updateCode}                
             />
          </div>
         );   

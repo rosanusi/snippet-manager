@@ -4,14 +4,17 @@ class SnippetPane extends Component {
 
     render() {
 
-        const { entries } = this.props;
-        
-        const snippet = entries[0];
+        const {label, key, inputCode, updateCode  } = this.props;
 
         return (
         <div className="snippet-pane">
-            <div key={snippet.key}>
-                Name: {snippet.label}
+            <div key={key}>
+                <span>Name: {label}</span>
+                <span>id: {key}</span>
+                <form key={key} className="update-code-form" onSubmit={((e) => updateCode(e))}>
+                <textarea name="code" placeholder={label} ref={inputCode}></textarea>
+                <button className="save-snippet">Save Snippet</button>
+                </form>
             </div>
         </div>     
         );
