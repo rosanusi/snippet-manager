@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SnippetList from "./SnippetList"
+import SnippetPane from "./SnippetPane"
 import SnippetControls from "./SnippetControls"
 import SnippetForm from "./SnippetForm"
 import "./snippetManager.css"
@@ -84,7 +85,7 @@ class SnippetManager extends Component {
                 <SnippetList 
                 showCode={this.showCode}
                 entries={this.state.snippets}
-                />       
+                />    
             </div>
          </div>
         );   

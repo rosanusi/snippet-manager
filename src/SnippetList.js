@@ -1,33 +1,39 @@
 import React, { Component } from "react";
-import SnippetPane from "./SnippetPane";
 
 class SnippetList extends Component {
 
     render() {
 
-        const { showCode } = this.props;         
+        const { showCode, entries } = this.props;
 
-        const snippetEntries = this.props.entries.map(function(snippet, i){
-        return <li  onClick={showCode} 
-                    key={snippet.key}>
-                    
-                    {snippet.label}
-                    
-                    </li>;
-        }) 
+
+        const snippetEntries = entries.map((snippet) =>
+            <li  onClick={showCode} key={snippet.key}>
+                {snippet.label}    
+            </li>
+        ); 
+
+        const snippet = entries[0];
+        const snippetDetails = (
+            <div>
+                key={snippet.key}
+                id={snippet.label}
+                title={snippet.code}
+            </div>            
+        );
 
         return (
+            <div>
             <ul className="snippet-list">
                 { snippetEntries }
             </ul>
+            { snippetDetails }
+            </div>
         );
 
+        
 
-        const snippetPane = this.props.entries.map(function(snippet, i){
-            return  <div key={snippet.key}>  
-                        {snippet.label}      
-                    </div>;
-            }) 
+
     }
 }
 
