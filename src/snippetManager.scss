@@ -1,17 +1,10 @@
-.wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    
-}
-
 .snippet-manager {
-    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
+    position: relative;
+    // overflow: hidden;
     // max-width: 860px;
     background-color: #fff;
     // border-radius: 12px;
@@ -60,7 +53,7 @@
 }
 
 
-.list-pane {
+.list-pane {    
     width: 280px;
     height: 100%;
     background-color: hsla(40, 25%, 96%, 1);  
@@ -106,4 +99,9 @@
             outline: none;
         }
     }
+}
+
+
+.snippet-pane {
+    
 }

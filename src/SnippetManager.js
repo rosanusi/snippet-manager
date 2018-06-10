@@ -62,10 +62,14 @@ class SnippetManager extends Component {
         this.inputLabel.focus();
     }
 
-    showCode(e) {
-        console.log("Ok! Ok! Time to show something");
-        console.log(this.state.snippets.snippet);
+
+    showCode = (e, snippet) => {
+        // access to e.target here
+        console.log(snippet);
+
     }
+
+
 
 
 
@@ -85,8 +89,12 @@ class SnippetManager extends Component {
                 <SnippetList 
                 showCode={this.showCode}
                 entries={this.state.snippets}
-                />    
+                />
             </div>
+            <SnippetPane 
+                entries={this.state.snippets}
+                
+            />
          </div>
         );   
     }

@@ -8,26 +8,17 @@ class SnippetList extends Component {
 
 
         const snippetEntries = entries.map((snippet) =>
-            <li  onClick={showCode} key={snippet.key}>
+            <li  onClick={((e) => showCode(e, snippet))}
+                key={snippet.key}>
                 {snippet.label}    
             </li>
         ); 
-
-        const snippet = entries[0];
-        const snippetDetails = (
-            <div>
-                key={snippet.key}
-                id={snippet.label}
-                title={snippet.code}
-            </div>            
-        );
 
         return (
             <div>
             <ul className="snippet-list">
                 { snippetEntries }
             </ul>
-            { snippetDetails }
             </div>
         );
 
